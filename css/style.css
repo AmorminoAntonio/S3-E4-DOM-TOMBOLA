@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+#tabellone {
+  width: 650px;
+  margin-inline: auto;
+  border-radius: 50%;
+  background-color: #7300ff4e;
+}
+
+.cella {
+  display: inline-block;
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  background-color: rgb(255 255 255);
+  line-height: 50px;
+  margin: 5px;
+  border: 1px solid #000000;
+  font-size: 16px;
+  box-sizing: border-box;
+  color: black;
+  border-radius: 2rem;
+}
+
+.estratta {
+  background-color: rgba(69, 199, 18, 0.87);
+  font-weight: bold;
+}
+button {
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px 20px;
+  margin-top: 2rem;
+  border-radius: 2rem;
+}
