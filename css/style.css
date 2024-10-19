@@ -14,8 +14,9 @@ h1 {
 #tabellone {
   width: 650px;
   margin-inline: auto;
-  border-radius: 50%;
-  background-color: #7300ff4e;
+  border-radius: 2rem;
+  background-color: #93939329;
+  border-color: black;
 }
 
 .cella {
@@ -26,21 +27,42 @@ h1 {
   background-color: rgb(255 255 255);
   line-height: 50px;
   margin: 5px;
-  border: 1px solid #000000;
   font-size: 16px;
-  box-sizing: border-box;
-  color: black;
+  color: rgb(0, 0, 0);
   border-radius: 2rem;
 }
 
 .estratta {
-  background-color: rgba(69, 199, 18, 0.87);
+  background-color: rgba(0, 255, 26, 0.386);
   font-weight: bold;
 }
+
 button {
   cursor: pointer;
   font-size: 16px;
   padding: 10px 20px;
   margin-top: 2rem;
+  border-radius: 1rem;
+  background-color: rgba(0, 255, 8, 0.298);
+}
+
+#cartellaGiocatore {
+    width: 650px;
+    margin-inline: auto;
+    border-radius: 2rem;
+    background-color: #93939329;
+    border-color: black;
+}
+
+.Cartella {
+    display: inline-block;
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  background-color: rgb(255 255 255);
+  line-height: 50px;
+  margin: 5px;
+  font-size: 16px;
+  color: rgb(0, 0, 0);
   border-radius: 2rem;
 }

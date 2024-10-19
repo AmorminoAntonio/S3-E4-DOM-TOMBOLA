@@ -8,8 +8,10 @@
 
 const tabellone = document.getElementById("tabellone");
 const estraiBtn = document.getElementById("estraiBtn");
+const cartellaGiocatore = document.getElementById("cartellaGiocatore");
 
 const numeriEstratti = [];
+const numeriCartella = [];
 
 function creaTabellone() {
   for (let i = 1; i <= 76; i++) {
@@ -21,11 +23,23 @@ function creaTabellone() {
   }
 }
 
+function creaCartella() {
+  for (let i = 1; i <= 24; i++) {
+    const Cartella = document.createElement("div");
+    Cartella.classList.add("Cartella");
+    Cartella.textContent = i;
+    Cartella.id = "Cartella" + i;
+    cartellaGiocatore.appendChild(Cartella);
+  }
+}
+
 function estraiNumero() {
   if (numeriEstratti.length >= 76) {
     alert("Picciotti, i numeri sono finiti !!!");
     return;
   }
+
+  console.log(estraiNumero());
 
   let numeroEstratto;
 
@@ -39,6 +53,34 @@ function estraiNumero() {
   cellaEstratta.classList.add("estratta");
 }
 
+// Funzione per evidenziare i numeri che sono presenti sia nell'array originale che in quello estratto casualmente
+function evidenziaNumeri() {
+  const numeriEstratti = estraiNumeriCasuali();
+  const containerEstratti = document.getElementById("arrayEstratto");
+  //containerEstratti.innerHTML = ''; // Pulisce il contenuto precedente
+
+  // Mostra i numeri estratti
+  numeriEstratti.forEach((num) => {
+    const div = document.createElement("div");
+    div.classList.add("numero");
+    div.textContent = num;
+    containerEstratti.appendChild(div);
+  });
+
+  // Evidenzia i numeri corrispondenti tra numeriOriginali e numeriEstratti
+  const numeriDivs = document.querySelectorAll("#arrayOriginale .numero");
+  numeriDivs.forEach((div) => {
+    const num = parseInt(div.textContent);
+    if (numeriEstratti.includes(num)) {
+      div.classList.add("evidenziato"); // Aggiunge lo stile di evidenziazione
+    } else {
+      div.classList.remove("evidenziato"); // Rimuove lo stile di evidenziazione se non trovato
+    }
+  });
+}
+
 estraiBtn.addEventListener("click", estraiNumero);
+// cartellaGiocatore.addEventListener("click",)
 
 creaTabellone();
+creaCartella();
